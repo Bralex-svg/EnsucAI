@@ -29,7 +29,11 @@ export const AccountLinks: IAccountLinks[] = [
     title: 'My Profile',
     Icon: <SimpleLineIcons name="user" size={getHeight(20)} />,
   },
-  {title: 'Settings', Icon: <Feather name="settings" size={getHeight(20)} />},
+  {
+    title: 'Settings',
+    route: 'account_preview',
+    Icon: <Feather name="settings" size={getHeight(20)} />,
+  },
   {
     title: 'Notifications',
     Icon: <Feather name="bell" size={getHeight(20)} />,

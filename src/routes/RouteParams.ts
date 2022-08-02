@@ -32,4 +32,5 @@ export type AccountRouteParams = {
   auth: undefined;
   profile: undefined;
   account: undefined;
+  account_preview: undefined;
 };

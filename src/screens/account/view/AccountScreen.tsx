@@ -1,7 +1,7 @@
-import {FlatList, StyleSheet, Text, View} from 'react-native';
+import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {colors, Divider} from 'react-native-elements';
-import {Feather} from '../../../constants/Icons';
+import {AntDesign, Feather} from '../../../constants/Icons';
 import {getHeight, getWidth} from '../../../utils';
 import CustomIconButtom from '../../../components/CustomIconButtom';
 import {
@@ -15,7 +15,11 @@ import {
 import resources from '../../../resources';
 import {AccountLinks} from '../../../data';
 import AccountRouteLink from '../../../components/AccountRouteLink';
-export default function AccountScreent() {
+import {AccountRouteProps} from '../../../routes/RouteProps';
+export default function AccountScreent({
+  navigation,
+  route,
+}: AccountRouteProps<'account'>) {
   return (
     <View style={styles.root}>
       <View
@@ -72,13 +76,38 @@ export default function AccountScreent() {
       </View>
       <Divider />
       <SizedBox height={getHeight(10)} />
-      <View style={{paddingHorizontal: getWidth(25)}}>
+      <View style={{paddingHorizontal: getWidth(25), flex: 1}}>
         <FlatList
           data={AccountLinks}
           keyExtractor={(item) => item.title}
-          renderItem={({item}) => <AccountRouteLink info={item} />}
+          renderItem={({item}) => (
+            <AccountRouteLink
+              handlePress={() =>
+                navigation.navigate(item.route ? item.route : 'account')
+              }
+              info={item}
+            />
+          )}
         />
       </View>
+      <View style={{paddingHorizontal: getWidth(30)}}>
+        <RowContainer
+          children={[
+            <TouchableOpacity
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                alignSelf: 'flex-start',
+              }}>
+              <AntDesign name="login" size={getHeight(24)} />
+              <BigText children="Login" />
+            </TouchableOpacity>,
+            <Expanded />,
+          ]}
+        />
+      </View>
+      <SizedBox height={getHeight(10)} />
     </View>
   );
 }

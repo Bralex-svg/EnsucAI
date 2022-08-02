@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import RowContainer from './RowContainer';
 import {IAccountLinks} from '../interface';
@@ -10,10 +10,11 @@ import {Divider} from 'react-native-elements';
 
 interface IProps {
   info: IAccountLinks;
+  handlePress?: () => void;
 }
-export default function AccountRouteLink({info}: IProps) {
+export default function AccountRouteLink({info, handlePress}: IProps) {
   return (
-    <View style={{padding: getHeight(8)}}>
+    <TouchableOpacity onPress={handlePress} style={{padding: getHeight(8)}}>
       <RowContainer
         children={[
           info.Icon,
@@ -27,7 +28,7 @@ export default function AccountRouteLink({info}: IProps) {
       />
       <SizedBox height={getHeight(2.5)} />
       <Divider />
-    </View>
+    </TouchableOpacity>
   );
 }
 

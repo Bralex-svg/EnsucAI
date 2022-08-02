@@ -12,14 +12,14 @@ import {colors} from 'react-native-elements';
 interface IProps {
   props?: TouchableOpacityProps;
   bgcolor?: string;
-  child: ReactNode;
+  children: ReactNode;
   handlePress?: () => void;
 }
 export default function CustomButton({
   handlePress,
   props,
   bgcolor,
-  child,
+  children,
 }: IProps) {
   return (
     <TouchableOpacity
@@ -29,7 +29,7 @@ export default function CustomButton({
         backgroundColor: bgcolor ? bgcolor : colors.black,
       }}
       {...props}>
-      {child}
+      {children}
     </TouchableOpacity>
   );
 }
