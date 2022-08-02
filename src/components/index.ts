@@ -9,3 +9,4 @@ export {default as CustomInput} from './CustomInput';
 export {default as CustomButton} from './CustomButton';
 export {default as VerticalDivider} from './VerticalDivider';
 export {default as HorizontalDivider} from './HorizontalDivider';
+export {default as LocalImage} from './LocalImage';

@@ -15,6 +15,7 @@ export default function AuthRouter() {
         headerShown: false,
         gestureEnabled: false,
         gestureDirection: 'horizontal',
+        animation: 'slide_from_right',
       }}
       initialRouteName="welcome">
       <Stack.Screen name="welcome" component={AuthWelcomeScreen} />

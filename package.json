@@ -16,6 +16,7 @@
     "react": "16.13.1",
     "react-native": "0.63.4",
     "react-native-bootsplash": "^4.2.3",
+    "react-native-camera": "^4.2.1",
     "react-native-drop-shadow": "^0.0.5",
     "react-native-elements": "^3.4.2",
     "react-native-navigation-bar-color": "^2.0.1",

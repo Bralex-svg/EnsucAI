@@ -1,9 +1,9 @@
-import {View, Text} from 'react-native';
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeRouter from './HomeRouter';
-import {AuthWelcomeScreen} from '../screens/auth/view';
 import AuthRouter from './AuthRouter';
+import DashboardRouter from './DashboardRouter';
+import AccountRouter from './AccountRouter';
 
 const Stack = createNativeStackNavigator();
 export default function MainRouter() {
@@ -13,9 +13,12 @@ export default function MainRouter() {
         headerShown: false,
         gestureEnabled: false,
         gestureDirection: 'horizontal',
+        animation: 'slide_from_right',
       }}>
       <Stack.Screen name="home" component={HomeRouter} />
       <Stack.Screen name="auth" component={AuthRouter} />
+      <Stack.Screen name="dashboard_stack" component={DashboardRouter} />
+      <Stack.Screen name="account_stack" component={AccountRouter} />
     </Stack.Navigator>
   );
 }

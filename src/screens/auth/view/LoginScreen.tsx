@@ -82,6 +82,7 @@ export default function LoginScreen({navigation}: AuthRouteProps<'login'>) {
         />
         <SizedBox height={getHeight(12)} />
         <CustomButton
+          handlePress={() => navigation.navigate('dashboard_stack')}
           child={
             <SmallText
               props={{style: {color: colors.white, fontSize: getHeight(20)}}}
