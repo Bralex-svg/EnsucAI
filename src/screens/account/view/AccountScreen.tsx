@@ -30,6 +30,11 @@ export default function AccountScreent({
         <RowContainer
           children={[
             <CustomIconButtom
+              handlePress={() =>
+                navigation.canGoBack()
+                  ? navigation.goBack()
+                  : navigation.navigate('dashboard_stack')
+              }
               Icon={<Feather name="chevron-left" size={getHeight(24)} />}
             />,
             <Expanded />,
